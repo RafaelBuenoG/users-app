@@ -9,5 +9,9 @@ export const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
+  },  {
+    path: 'create-user',
+    loadComponent: () => import('./create-user/create-user.page').then( m => m.CreateUserPage)
   },
+
 ];

@@ -7,14 +7,19 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-item *ngFor="let user of listaUsers">
+    <ion-label>
+      {{user.first_name}}
+    </ion-label>
+    <ion-button color="warning" (click)="alterarUser(user.id!)">
+      <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+    </ion-button>
+    <ion-button color="danger" (click)="excluirUser(user.id!)">
+      <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+    </ion-button>
+  </ion-item>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-button routerLink="/create-user">
+  Adicionar User
+</ion-button>
 </ion-content>
